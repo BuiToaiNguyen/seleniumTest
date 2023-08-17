@@ -88,17 +88,30 @@ namespace WindowsFormsApp1
                 eleImage.Click();                   
                 
      
-                    IWebElement eleUpload = wait.Until(ExpectedConditions.ElementExists(By.CssSelector("div[class='x9f619 x1n2onr6 x1ja2u2z x78zum5 xdt5ytf x2lah0s x193iq5w x6s0dn4 x1gslohp x12nagc xzboxd6 x14l7nz5']")));
-                eleUpload.Click();
+                //    IWebElement eleUpload = wait.Until(ExpectedConditions.ElementExists(By.CssSelector("div[class='x9f619 x1n2onr6 x1ja2u2z x78zum5 xdt5ytf x2lah0s x193iq5w x6s0dn4 x1gslohp x12nagc xzboxd6 x14l7nz5']")));
+                //eleUpload.Click();
 
 
                 
+                Thread.Sleep(3000);
+                var elemAllUpload = wait.Until(ExpectedConditions.ElementExists(By.CssSelector("div[class='x9f619 x1n2onr6 x1ja2u2z x78zum5 xdt5ytf x2lah0s x193iq5w xurb0ha x1sxyh0 x1gslohp x12nagc xzboxd6 x14l7nz5']")));
+                if(elemAllUpload != null)
+                {
+                    var eleSelectImage1 = elemAllUpload.FindElement(By.CssSelector(("input[class='x1s85apg']")));
+                    eleSelectImage1.SendKeys(@"D:\Nguyen\selenium\seleniumTest\WindowsFormsApp1\photo_2023-07-20_14-01-29.jpg");
+                    eleImage.Click();
 
-                
+                    eleSelectImage1.SendKeys(@"D:\Nguyen\selenium\seleniumTest\WindowsFormsApp1\photo_2023-07-20_14-01-29.jpg");
+                    eleImage.Click();
+
+                    eleSelectImage1.SendKeys(@"D:\Nguyen\selenium\seleniumTest\WindowsFormsApp1\photo_2023-07-20_14-01-29.jpg");
+
+                }
+
                 IWebElement eleSelectImage = wait.Until(ExpectedConditions.ElementExists(By.CssSelector("input[class='x1s85apg']")));
                 //IWebElement eleSelect Image = wait.Until(ExpectedConditions.ElementExists(By.XPath("//input[@type='file']")));
 
-                //eleSelectImage.SendKeys(@"D:\Nguyen\selenium\seleniumTest\WindowsFormsApp1\photo_2023-07-20_14-01-29.jpg");
+                eleSelectImage.SendKeys(@"D:\Nguyen\selenium\seleniumTest\WindowsFormsApp1\photo_2023-07-20_14-01-29.jpg");
 
 
 
